@@ -1,0 +1,24 @@
+<div>
+    <button class="btn btn-danger" (click)="onLoad()">Load</button>
+</div>
+<div class = "page-header">
+    <div class = "list-group">
+        <div *ngFor="let item of doctor; let idx = index;">
+            <button type="button" class="btn btn-secondary"> #:
+                <span class="badge badge-secondary" [innerText]="idx+1"></span>
+            </button>
+            <div>
+                <h4>Doctor Name: {{item.doctorName_str | uppercase}}</h4>
+                <h4>Doctor Id: {{item.doctorId_i }} </h4>
+                <h5>Experience: {{item.doctorExperience_f}}</h5>
+                <h5>Gender: {{item.gender_str}}</h5>
+                <h5>Qualification : {{item.qualification_str}}</h5>
+                <div *ngIf="item.status_boo">
+                    <h5>Status : Available</h5>
+                </div>
+                <hr/>
+            </div>
+            <hr/>  
+        </div>
+    </div>
+</div>
